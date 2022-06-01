@@ -12,11 +12,11 @@
             let video=document.getElementById('video');
             if(navigator.mediaDevices.getUserMedia){
                 console.log("Yes");
-                navigator.mediaDevices.getUserMedia({audio:true})
+                navigator.mediaDevices.getUserMedia({audio:true,video:true})
                 .then(function(s){
                    video.srcObject=s;
                 })
-                console.log(navigator.mediaDevices.getUserMedia({audio:true}))
+               
             }
             else{
                 console.log("No");
