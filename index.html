@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My web cam</title>
+</head>
+<body>
+    <video autoplay="true" id="video"></video>
+    <script>
+            let video=document.getElementById('video');
+            if(navigator.mediaDevices.getUserMedia){
+                console.log("Yes");
+                navigator.mediaDevices.getUserMedia({audio:true})
+                .then(function(s){
+                   video.srcObject=s;
+                })
+                console.log(navigator.mediaDevices.getUserMedia({audio:true}))
+            }
+            else{
+                console.log("No");
+            }
+    </script>
+</body>
+</html>
